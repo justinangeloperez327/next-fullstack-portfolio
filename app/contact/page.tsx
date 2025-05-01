@@ -29,10 +29,10 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="min-h-screen py-20 px-6 bg-white text-gray-800">
-      <h1 className="text-3xl font-bold text-center mb-8">Contact Me</h1>
+    <main className="min-h-screen py-20 px-6 ">
+      <h1 className="text-6xl font-bold text-center mb-8">Contact Me</h1>
       {submitted ? (
-        <p className="text-center text-green-600 text-lg">
+        <p className="text-center text-lg">
           Thanks! I’ll get back to you soon.
         </p>
       ) : (
@@ -63,7 +63,7 @@ export default function ContactPage() {
           />
           <button
             type="submit"
-            className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700"
+            className="bg-slate-600 hover:bg-slate-400 px-6 py-3 rounded"
           >
             Send Message
           </button>

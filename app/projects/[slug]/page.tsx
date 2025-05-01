@@ -14,10 +14,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   if (!project) return notFound();
 
   return (
-    <main className="min-h-screen py-20 px-6 bg-white text-gray-800">
+    <main className="min-h-screen py-20 px-6">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
-        <p className="text-gray-600 mb-6">{project.description}</p>
+        <h1 className="text-6xl font-bold mb-4">{project.title}</h1>
+        <p className="mb-6 text-2xl">{project.description}</p>
 
         <Image
           src={project.imgSrc || "/fallback-image.jpg"}
@@ -29,10 +29,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
         <div className="flex flex-wrap gap-2 mb-6">
           {project.technologies.map((tech) => (
-            <span
-              key={tech}
-              className="bg-gray-100 border px-3 py-1 rounded-full text-sm"
-            >
+            <span key={tech} className="text-lg border px-3 py-1 rounded-full">
               {tech}
             </span>
           ))}
@@ -44,7 +41,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+              className="text-xl px-4 py-2 rounded bg-slate-600 hover:bg-slate-400"
             >
               Live Demo
             </a>
@@ -54,7 +51,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900"
+              className="text-xl bg-slate- px-4 py-2 rounded bg-slate-600 hover:bg-slate-400"
             >
               View Code
             </a>

@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen py-20 px-6 bg-gray-50 text-gray-800">
-      <h1 className="text-3xl font-bold text-center mb-8">About Me</h1>
-      <div className="max-w-3xl mx-auto text-lg space-y-4">
+    <main className="min-h-screen py-20 px-6 ">
+      <h1 className="text-6xl font-bold text-center mb-8">About Me</h1>
+      <div className="max-w-3xl mx-auto text-2xl space-y-4">
         <p>
           I`m a full stack developer with a passion for clean code, elegant
           design, and impactful solutions. With experience in Laravel, React,
