@@ -2,13 +2,12 @@ import { notFound } from "next/navigation";
 import { getPostBySlug } from "@/data/posts";
 
 interface PostPageProps {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-export default function BlogPost({ params }: PostPageProps) {
-  const post = getPostBySlug(params.slug);
+export default async function BlogPost({ params }: PostPageProps) {
+  const post = getPostBySlug((await params).slug);
 
   if (!post) return notFound();
 

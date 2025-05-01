@@ -4,13 +4,12 @@ import Image from "next/image";
 import { getProjectSlugs } from "@/data/projects";
 
 interface ProjectPageProps {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = getProjectSlugs(params.slug);
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const project = getProjectSlugs((await params).slug);
 
   if (!project) return notFound();
 
