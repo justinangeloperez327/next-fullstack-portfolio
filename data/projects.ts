@@ -1,4 +1,3 @@
-const githubUrl = process.env.GITHUB_PROFILE;
 export interface Project {
   slug: string;
   id: string;
@@ -26,7 +25,7 @@ export const projects: Project[] = [
       "Node.js",
     ],
     link: "https://stars-align.vercel.app/",
-    github: `${githubUrl}/react-stars-align`,
+    github: "https://github.com/justinangeloperez327/react-stars-align",
     imgSrc: "/images/stars-align.png",
     imgAlt: "Stars Align",
   },
@@ -44,7 +43,7 @@ export const projects: Project[] = [
       "PostgreSQL",
     ],
     link: "https://justin-real-estate.vercel.app/",
-    github: `${githubUrl}/next-real-estate`,
+    github: "https://github.com/justinangeloperez327/next-real-estate",
     imgSrc: "/images/real-estate-app.png",
     imgAlt: "Real Estate App",
   },
