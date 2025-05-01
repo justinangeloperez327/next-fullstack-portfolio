@@ -26,9 +26,9 @@ export const projects: Project[] = [
       "Node.js",
     ],
     link: "https://stars-align.vercel.app/",
-    github: `${githubUrl}/job-board-app-frontend`,
-    imgSrc: "/images/job-board-app.png",
-    imgAlt: "Job Board App",
+    github: `${githubUrl}/react-stars-align`,
+    imgSrc: "/images/stars-align.png",
+    imgAlt: "Stars Align",
   },
   {
     slug: "real-estate",
@@ -36,10 +36,20 @@ export const projects: Project[] = [
     title: "Real Estate App",
     description:
       "A real estate application that allows users to search and filter properties.",
-    technologies: ["Next Js", "Supabase", "Tailwind CSS", "Node.js"],
+    technologies: [
+      "Next Js",
+      "Tailwind CSS",
+      "Node.js",
+      "Supabase",
+      "PostgreSQL",
+    ],
     link: "https://justin-real-estate.vercel.app/",
-    github: `${githubUrl}/real-estate-app-frontend`,
+    github: `${githubUrl}/next-real-estate`,
     imgSrc: "/images/real-estate-app.png",
     imgAlt: "Real Estate App",
   },
 ];
+
+export const projectSlugs = (slug: string) => {
+  return projects.find((project) => project.slug === slug);
+};

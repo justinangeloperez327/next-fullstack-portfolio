@@ -1,28 +1,6 @@
 import Link from "next/link";
 
-const projects = [
-  {
-    slug: "job-board-platform",
-    title: "Job Board Platform",
-    tech: ["MERN", "Tailwind", "JWT Auth"],
-    description:
-      "A full-featured job portal with filters, user login, dashboard, and admin panel.",
-  },
-  {
-    slug: "real-estate-crm",
-    title: "Real Estate CRM System",
-    tech: ["Laravel", "React", "PostgreSQL"],
-    description:
-      "A CRM built for real estate firms to manage leads, clients, property listings, and pipelines.",
-  },
-  {
-    slug: "gis-dashboard",
-    title: "GIS Mapping & Analytics Dashboard",
-    tech: ["Next.js", "Leaflet", "REST API"],
-    description:
-      "A geospatial dashboard with interactive maps and real-time data visualization for government use.",
-  },
-];
+import { projects } from "@/data/projects";
 
 export default function ProjectsPage() {
   return (
@@ -44,7 +22,7 @@ export default function ProjectsPage() {
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-2 text-xs">
-                {project.tech.map((t) => (
+                {project.technologies.map((t) => (
                   <span
                     key={t}
                     className="bg-[var(--color-base-bg)] border border-[var(--color-glitch-purple)] text-[var(--color-base-text)] px-2 py-1 rounded-full"

@@ -1,3 +1,11 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Justin Angelo Perez | Web Developer",
+  description:
+    "Portfolio of Justin Angelo Perez, a creative full stack web developer.",
+};
+
 export default function AboutPage() {
   return (
     <main className="min-h-screen py-20 px-6 bg-gray-50 text-gray-800">

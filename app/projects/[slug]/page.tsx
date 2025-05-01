@@ -1,33 +1,16 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
+
+import { projectSlugs } from "@/data/projects";
 
 interface ProjectPageProps {
-  params: { slug: string };
+  params: {
+    slug: string;
+  };
 }
 
-const projects = {
-  "job-board-platform": {
-    title: "Job Board Platform",
-    description:
-      "A scalable job platform with filters, authentication, and an admin dashboard built using the MERN stack.",
-    tech: ["MongoDB", "Express", "React", "Node.js", "Tailwind"],
-    image: "/projects/job-board.jpg",
-    link: "https://jobboard-demo.vercel.app",
-    repo: "https://github.com/yourname/job-board",
-  },
-  "real-estate-crm": {
-    title: "Real Estate CRM",
-    description:
-      "A Laravel + React-based CRM tailored for real estate companies to manage listings, leads, and client interactions.",
-    tech: ["Laravel", "React", "PostgreSQL", "Inertia.js"],
-    image: "/projects/real-estate.jpg",
-    link: "",
-    repo: "",
-  },
-  // Add more projects here
-};
-
 export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = projects[params.slug];
+  const project = projectSlugs(params.slug);
 
   if (!project) return notFound();
 
@@ -37,16 +20,16 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
         <p className="text-gray-600 mb-6">{project.description}</p>
 
-        {project.image && (
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full rounded-lg mb-6 shadow"
-          />
-        )}
+        <Image
+          src={project.imgSrc || "/fallback-image.jpg"}
+          alt={project.imgAlt || "Project image"}
+          className="w-full rounded-lg mb-6 shadow"
+          width={800}
+          height={600}
+        />
 
         <div className="flex flex-wrap gap-2 mb-6">
-          {project.tech.map((tech) => (
+          {project.technologies.map((tech) => (
             <span
               key={tech}
               className="bg-gray-100 border px-3 py-1 rounded-full text-sm"
@@ -67,9 +50,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               Live Demo
             </a>
           )}
-          {project.repo && (
+          {project.github && (
             <a
-              href={project.repo}
+              href={project.github}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900"
