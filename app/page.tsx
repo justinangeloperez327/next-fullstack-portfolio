@@ -19,31 +19,31 @@ export default function HomePage() {
 
   return (
     <section className="flex flex-col justify-center items-center text-center py-32 px-6">
-      <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+      <h1 className="text-5xl md:text-8xl font-extrabold mb-6 leading-tight">
         Hi, I’m <span className="t">Justin</span>
         <br />
         Full Stack Web Developer
       </h1>
-      <p className="text-lg md:text-xl max-w-2xl mb-8 text-[var(--color-glitch-purple)]">
+      <p className="text-xl md:text-4xl max-w-2xl mb-8 text-[var(--color-glitch-purple)]">
         I build scalable, elegant, and modern web applications using Next.js,
         Laravel, Node.js, and more.
       </p>
       <Link
         href="/projects"
-        className="bg-[var(--color-glitch-purple)] text-black px-6 py-3 rounded-full text-lg hover:bg-[var(--color-glitch-yellow)] transition"
+        className="bg-slate-600 hover:bg-slate-400 px-6 py-3 rounded-full text-2xl"
       >
         View My Projects
       </Link>
 
       <div className="py-20 text-center">
-        <h2 className="text-2xl md:text-3xl font-semibold mb-10">
+        <h2 className="text-4xl md:text-6xl font-semibold mb-10">
           My Stack in 2025
         </h2>
         <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
           {techStacks.map((tech) => (
             <span
               key={tech}
-              className="bg-[var(--color-base-bg)] border border-[var(--color-glitch-purple)] px-5 py-2 rounded-full shadow-sm text-sm hover:shadow-md transition"
+              className="border bg-neutral-600 hover:border-slate-400 px-5 py-2 rounded-full shadow-sm text-lg"
             >
               {tech}
             </span>
@@ -52,16 +52,16 @@ export default function HomePage() {
       </div>
 
       <div className="py-28 text-center">
-        <h3 className="text-2xl md:text-3xl font-bold mb-6">
+        <h3 className="text-4xl md:text-6xl font-bold mb-6">
           Let’s build something impactful together.
         </h3>
-        <p className="mb-8 text-lg max-w-xl mx-auto text-[var(--color-glitch-purple)]">
+        <p className="mb-8 text-2xl max-w-xl mx-auto">
           I’m available for freelance work, contract roles, or collaboration on
           open-source and real-world tech solutions.
         </p>
         <Link
           href="/contact"
-          className="inline-block bg-[var(--color-glitch-yellow)] text-white px-8 py-3 rounded-full text-lg hover:bg-[var(--color-glitch-teal)] transition"
+          className="inline-block bg-slate-600 hover:bg-slate-400  px-8 py-3 rounded-full text-2xl"
         >
           Contact Me
         </Link>

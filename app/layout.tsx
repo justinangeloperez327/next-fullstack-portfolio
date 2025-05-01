@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Iceland } from "next/font/google";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
@@ -9,8 +9,12 @@ export const metadata: Metadata = {
     "Portfolio of Justin Angelo Perez, a creative full stack web developer.",
 };
 
-const inter = Inter({ subsets: ["latin"] });
-
+const iceland = Iceland({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-iceland",
+  display: "swap",
+});
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -18,16 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={
-          inter.className +
-          " bg-[var(--color-base-bg)] text-[var(--color-base-text)]"
-        }
-      >
+      <body className={iceland.className + " bg-gray-900 text-slate-200"}>
         <Navbar />
         <main>{children}</main>
-        <footer className="w-full text-center text-xs text-[var(--color-glitch-purple)] py-6 border-t border-[var(--color-glitch-purple)]">
-          © {new Date().getFullYear()} Justin Angelo Perez. All rights reserved.
+        <footer className="w-full text-center text-lg py-6 border-t">
+          © {new Date().getFullYear()} Justin A ngelo Perez. All rights
+          reserved.
         </footer>
       </body>
     </html>

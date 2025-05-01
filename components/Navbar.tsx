@@ -12,13 +12,13 @@ export default function Navbar() {
 
   return (
     <header className="z-50 relative">
-      <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="font-bold text-xl">
-          Justin
+      <nav className="container mx-auto p-6 flex justify-between items-center">
+        <Link href="/" className="font-bold text-4xl">
+          JUSTIN PEREZ
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6 font-medium ">
+        <ul className="hidden md:flex space-x-6 font-bold text-2xl">
           <li>
             <Link href="/about" className="">
               About
