@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
-import { projectSlugs } from "@/data/projects";
+import { getProjectSlugs } from "@/data/projects";
 
 interface ProjectPageProps {
   params: {
@@ -10,7 +10,7 @@ interface ProjectPageProps {
 }
 
 export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = projectSlugs(params.slug);
+  const project = getProjectSlugs(params.slug);
 
   if (!project) return notFound();
 

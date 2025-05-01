@@ -50,6 +50,6 @@ export const projects: Project[] = [
   },
 ];
 
-export const projectSlugs = (slug: string) => {
+export const getProjectSlugs = (slug: string) => {
   return projects.find((project) => project.slug === slug);
 };

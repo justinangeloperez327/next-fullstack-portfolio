@@ -1,41 +1,8 @@
 import React from "react";
 import Link from "next/link";
+import { posts } from "@/data/posts";
 
 const BlogPage = () => {
-  const posts = [
-    {
-      id: 1,
-      title: "Building Modern Web Applications with Next.js",
-      excerpt:
-        "Discover the power of Next.js for creating fast, SEO-friendly web applications with server-side rendering and static site generation.",
-      content: "This is the content of the first blog post.",
-      date: "May 15, 2023",
-      readTime: "5 min read",
-      featured: true,
-      image: "/images/nextjs-blog.jpg", // You'll need to add this image to your public folder
-    },
-    {
-      id: 2,
-      title: "Mastering CSS Grid and Flexbox",
-      excerpt:
-        "A comprehensive guide to modern CSS layout techniques that will transform how you design web pages.",
-      content: "This is the content of the second blog post.",
-      date: "April 22, 2023",
-      readTime: "8 min read",
-      image: "/images/css-blog.jpg", // You'll need to add this image to your public folder
-    },
-    {
-      id: 3,
-      title: "TypeScript Best Practices for 2023",
-      excerpt:
-        "Learn how to leverage TypeScript to write more maintainable and error-free code for your projects.",
-      content: "This is the content of the third blog post.",
-      date: "March 10, 2023",
-      readTime: "6 min read",
-      image: "/images/typescript-blog.jpg", // You'll need to add this image to your public folder
-    },
-  ];
-
   // Find the featured post
   const featuredPost = posts.find((post) => post.featured);
   // Get the regular (non-featured) posts
@@ -97,10 +64,7 @@ const BlogPage = () => {
               </div>
               <h3 className="text-xl font-semibold mb-3">{post.title}</h3>
               <p className="text-sm mb-4 line-clamp-2">{post.excerpt}</p>
-              <Link
-                href={`/blog/${post.id}`}
-                className="text-[var(--color-clover)] hover:underline text-sm"
-              >
+              <Link href={`/blog/${post.id}`} className="text-sm">
                 Read more →
               </Link>
             </div>
