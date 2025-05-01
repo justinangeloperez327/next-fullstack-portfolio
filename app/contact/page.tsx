@@ -4,10 +4,27 @@ import { useState } from "react";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // You can add API call here
+    await fetch("/api/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        to: "justinangeloperez327@gmail.com",
+        subject: "New Contact Form Submission",
+        message: {
+          name,
+          email,
+          message,
+        },
+      }),
+    });
     setSubmitted(true);
   }
 
@@ -25,18 +42,24 @@ export default function ContactPage() {
             placeholder="Name"
             className="w-full px-4 py-3 border rounded"
             required
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
           <input
             type="email"
             placeholder="Email"
             className="w-full px-4 py-3 border rounded"
             required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <textarea
             rows={5}
             placeholder="Message"
             className="w-full px-4 py-3 border rounded"
             required
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
           />
           <button
             type="submit"
