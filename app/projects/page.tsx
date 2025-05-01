@@ -1,6 +1,5 @@
-import Link from "next/link";
-
 import { projects } from "@/data/projects";
+import ProjectCard from "@/components/ProjectCard";
 
 export default function ProjectsPage() {
   return (
@@ -13,26 +12,7 @@ export default function ProjectsPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {projects.map((project) => (
-          <Link key={project.slug} href={`/projects/${project.slug}`}>
-            <div className="border border-[var(--color-glitch-purple)] p-6 rounded-lg hover:border-[var(--color-clover)] hover:shadow-xl transition">
-              <h2 className="text-xl font-semibold mb-2 text-[var(--color-clover)]">
-                {project.title}
-              </h2>
-              <p className="text-[var(--color-glitch-purple)] text-sm mb-4">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2 text-xs">
-                {project.technologies.map((t) => (
-                  <span
-                    key={t}
-                    className="bg-[var(--color-base-bg)] border border-[var(--color-glitch-purple)] text-[var(--color-base-text)] px-2 py-1 rounded-full"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </Link>
+          <ProjectCard key={project.slug} {...project} />
         ))}
       </div>
     </main>
